@@ -2,6 +2,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    display: grid; /* Added after Tool report*/
+    grid-template-rows: auto 1fr auto; /* Added after Tool report*/
+    min-height: 100vh; /* Added */
 }
 
 header {
@@ -9,12 +12,14 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    grid-row: 1; /* Added after Tool report*/
 }
 
 nav {
     background-color: black;
     text-align: center;
     padding: 30px 0;
+    grid-row: 2; /* Added after Tool report*/
 }
 
 nav ul {
@@ -36,28 +41,25 @@ nav ul li a {
 }
 
 main {
-    display: flex;
-    flex: 1;
+    display: grid; /* Changed after Tool report*/
+    grid-template-columns: 2fr 1fr; /* Changed after Tool report*/
     background-color: white;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-
+    grid-row: 3; /* Added after Tool report*/
 }
 
 article {
-    flex: 2;
     background-color: #f0f0f0;
     padding: 20px;
 }
+
 .main-content {
-    flex: 3;
     padding: 20px;
-    
 }
 
 aside {
-    flex: 1;
     background-color: white;
     padding: 20px;
 }
@@ -67,4 +69,5 @@ footer {
     color: white;
     text-align: center;
     padding: 90px;
+    grid-row: 4; /* Added after Tool report*/
 }
