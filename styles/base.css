@@ -98,7 +98,7 @@ main {
 }
 
 .location h3 {
-    color: rgb(247, 247, 247);
+    color: rgb(12, 12, 12);
     padding: 10px;
     border-radius: 10px 10px 0 0;
     text-align: center;
@@ -163,7 +163,7 @@ main {
 }
 
 .resources ul li a {
-    color: #2980b9;
+    color: #001aff;
     text-decoration: none;
 }
 
@@ -182,5 +182,6 @@ footer p {
 
 }
 .modify {
-    color: #f1c40f;
+    color: #ffd52f;
+    background-color:#2c3e50;
 }
