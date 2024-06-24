@@ -17,7 +17,10 @@ nav {
     display: flex;
     justify-content: center;
 }
+nav a:hover{ 
+    color: yellow
 
+}
 nav ul {
     display: flex;
     flex-direction: row;
@@ -42,6 +45,10 @@ main {
 
 h2 {
     text-align: center;
+}
+
+.active {
+    color: yellow;
 }
 
 .gallery {
