@@ -19,6 +19,15 @@ header {
     padding: 10px 0; /* Padding */
 }
 
+header::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-color);
+    margin-top: 10px;
+}
+
 main {
     text-align: center; /* Center align text */
 }
