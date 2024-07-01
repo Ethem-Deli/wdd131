@@ -1,0 +1,176 @@
+:root {
+    --primary-color: #ff0000; /* Primary color */
+    --secondary-color: #388E3C; /* Secondary color */
+    --text-color: #000000; /* Text color */
+    --background-color: #F5F5F5; /* Background color */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Font family */
+    margin: 0; /* No margin */
+    padding: 0; /* No padding */
+    background-color: var(--background-color); /* Background color from root variables */
+}
+
+header {
+    background-color: var(--primary-color); /* Header background color */
+    color: white; /* Header text color */
+    text-align: center; /* Center align text */
+    padding: 10px 0; /* Padding */
+}
+
+main {
+    text-align: center; /* Center align text */
+}
+
+.image-container {
+    position: relative; /* Position relative for overlay positioning */
+}
+
+.image-container img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.overlay {
+    position: absolute; /* Absolute position within image-container */
+    top: 0; /* Align to top */
+    width: 100%; /* Full width */
+    display: flex; /* Flex display */
+    justify-content: space-between; /* Space between items */
+    padding: 20px; /* Padding */
+    box-sizing: border-box; /* Include padding in box size */
+}
+
+.data {
+    background-color: rgba(255, 255, 255, 0.404); /* Semi-transparent background */
+    color: var(--text-color); /* Text color */
+    padding: 20px; /* Padding */
+    border-radius: 10px; /* Rounded corners */
+    width: calc(30% + 1vw); /* Dynamic width */
+    height: calc(30% + 10vh); /* Dynamic height */
+    font-size: calc(0.8em + 0.5vw); /* Dynamic font size */
+}
+
+.weather {
+    background-color: rgba(255, 255, 255, 0.404); /* Semi-transparent background */
+    color: var(--text-color); /* Text color */
+    padding: 20px; /* Padding */
+    border-radius: 10px; /* Rounded corners */
+    width: calc(30% + 1vw); /* Dynamic width */
+    height: calc(30% + 10vh); /* Dynamic height */
+    font-size: calc(0.8em + 0.5vw); /* Dynamic font size */
+    align-self: flex-end; /* Align weather box to bottom */
+    margin-top: 5vh; /* Adjust this value to move weather box down */
+}
+
+.data h2 {
+    background-color: #28b8309f; /* Header background color for data */
+    margin-top: 0; /* No top margin */
+    font-size: calc(1em + 0.5vw); /* Dynamic font size */
+}
+
+.weather h3 {
+    background-color: #28b8309f; /* Header background color for weather */
+    margin-top: 0; /* No top margin */
+    font-size: calc(1em + 0.5vw); /* Dynamic font size */
+}
+
+.weather .icon {
+    text-align: center; /* Center align icon */
+    margin-bottom: 10px; /* Space below icon */
+}
+
+.weather .icon img {
+    width: calc(5% + 2vw); /* Dynamic icon width */
+    height: calc(5% + 2vw); /* Dynamic icon height */
+    vertical-align: middle; /* Vertical align middle */
+}
+
+.weather .weather-large-icon {
+    display: none; /* Hide large icon by default */
+}
+
+.weather .weather-icon {
+    display: inline-block; /* Show small icon by default */
+}
+
+footer {
+    background-color: var(--primary-color); /* Footer background color */
+    color: white; /* Footer text color */
+    text-align: center; /* Center align text */
+    padding: 10px 0; /* Padding */
+}
+
+@media (min-width: 601px) {
+    .data, .weather {
+        width: calc(30% + 2vw); /* Adjust width for larger screens */
+        height: calc(30% + 20vh); /* Adjust height for larger screens */
+    }
+
+    .weather .weather-large-icon {
+        display: inline-block; /* Show large icon for larger screens */
+    }
+
+    .weather .weather-icon {
+        display: none; /* Hide small icon for larger screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .overlay {
+        flex-direction: column; /* Column direction for small screens */
+        position: static; /* Static position */
+    }
+
+    .data {
+        width: 80%; /* Adjust width for small screens */
+        background-color: rgba(255, 255, 255, 0.8); /* More opaque background */
+        color: var(--text-color); /* Text color */
+        padding: 20px; /* Padding */
+        border-radius: 10px; /* Rounded corners */
+        margin: 0 auto 20px; /* Center horizontally and margin at the bottom */
+        text-align: left; /* Left align text */
+        font-size: initial; /* Default font size */
+        height: auto; /* Auto height */
+    }
+
+    .weather {
+        width: 80%; /* Adjust width for small screens */
+        background-color: rgba(255, 255, 255, 0.8); /* More opaque background */
+        color: var(--text-color); /* Text color */
+        padding: 20px; /* Padding */
+        border-radius: 10px; /* Rounded corners */
+        margin: 0 auto 20px; /* Center horizontally and margin at the bottom */
+        text-align: left; /* Left align text */
+        font-size: initial; /* Default font size */
+        height: auto; /* Auto height */
+    }
+
+    .data h2, .weather h3 {
+        background-color: transparent; /* No background color for headers */
+        font-size: initial; /* Default font size */
+    }
+
+    .weather {
+        margin-top: 20px; /* Margin at the top for weather box */
+    }
+
+    .data {
+        margin-top: 20px; /* Margin at the top for data box */
+    }
+
+    .weather .weather-large-icon {
+        display: none; /* Hide large icon for small screens */
+    }
+
+    .weather .weather-icon {
+        display: inline-block; /* Show small icon for small screens */
+    }
+}
+
+.weather .icon img {
+    width: 75px; /* Fixed width */
+    height: 75px; /* Fixed height */
+    vertical-align: middle; /* Align vertically */
+}
