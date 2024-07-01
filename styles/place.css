@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #ff0000; /* Primary color */
+    --primary-color: #08f728; /* Primary color */
     --secondary-color: #388E3C; /* Secondary color */
     --text-color: #000000; /* Text color */
     --background-color: #F5F5F5; /* Background color */
@@ -14,7 +14,7 @@ body {
 
 header {
     background-color: var(--primary-color); /* Header background color */
-    color: white; /* Header text color */
+    color: var(--text-color); /* Header text color */
     text-align: center; /* Center align text */
     padding: 10px 0; /* Padding */
 }
@@ -106,9 +106,10 @@ main {
 
 footer {
     background-color: var(--primary-color); /* Footer background color */
-    color: white; /* Footer text color */
+    color: var(--text-color); /* Footer text color */
     text-align: center; /* Center align text */
     padding: 10px 0; /* Padding */
+    font-size: 20px; /* Example font size */
 }
 
 @media (min-width: 601px) {

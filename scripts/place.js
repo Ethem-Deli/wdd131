@@ -1,25 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const yearSpan = document.getElementById('year');
-    const lastModifiedSpan = document.getElementById('lastModified');
-    const windChillSpan = document.getElementById('windChill');
+document.addEventListener('DOMContentLoaded', (event) => {
+    const yearElement = document.getElementById('year');
+    const lastModifiedElement = document.getElementById('lastModified');
+    const windChillElement = document.getElementById('windChill');
 
-    // Set current year
-    const currentYear = new Date().getFullYear();
-    yearSpan.textContent = currentYear;
-
-    // Set last modified date
-    lastModifiedSpan.textContent = document.lastModified;
-
-    // Calculate and set wind chill
-    const temperature = 10; // °C
-    const windSpeed = 5; // km/h
-    const windChill = calculateWindChill(temperature, windSpeed);
-    windChillSpan.textContent = windChill !== "N/A" ? `${windChill.toFixed(1)}°C` : "N/A";
-});
-
-function calculateWindChill(temp, windSpeed) {
-    if (temp <= 10 && windSpeed > 4.8) {
-        return 13.12 + 0.6215 * temp - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temp * Math.pow(windSpeed, 0.16);
+    // Function to calculate wind chill
+    function calculateWindChill(temperature, windSpeed) {
+        if (temperature && windSpeed) {
+            const windChill = 13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16)
+                            + 0.3965 * temperature * Math.pow(windSpeed, 0.16);
+            return Math.round(windChill * 10) / 10; // Round to one decimal place
+        }
+        return null;
     }
-    return "N/A";
-}
+
+    const currentYear = new Date().getFullYear();
+    yearElement.textContent = currentYear;
+
+    const lastModifiedDate = new Date(document.lastModified);
+    const formattedDate = lastModifiedDate.toLocaleString();
+    lastModifiedElement.textContent = formattedDate;
+
+    // Example values for temperature and wind speed (replace with actual data if available)
+    const temperature = 15; // Example temperature in Celsius
+    const windSpeed = 5; // Example wind speed in km/h
+
+    // Calculate wind chill and display
+    const windChill = calculateWindChill(temperature, windSpeed);
+    if (windChill !== null) {
+        windChillElement.textContent = `${windChill}°C`;
+    } else {
+        windChillElement.textContent = 'N/A';
+    }
+});
