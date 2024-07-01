@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif; /* Font family */
+    font-family: 'Roboto', sans-serif; /* Google Font */
     margin: 0; /* No margin */
     padding: 0; /* No padding */
     background-color: var(--background-color); /* Background color from root variables */
