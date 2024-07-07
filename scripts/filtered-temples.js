@@ -49,59 +49,127 @@ const temples = [
         area: 116642,
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-    // Add more temple objects here...
+    {
+        templeName: "Salt Lake",
+        location: "Salt Lake City, Utah, United States",
+        dedicated: "1893, April, 6",
+        area: 253015,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake/400x250/salt-lake-temple-lds-268111-wallpaper.jpg"
+    },
+    {
+        templeName: "Kirtland",
+        location: "Kirtland, Ohio, United States",
+        dedicated: "1836, March, 27",
+        area: 5000,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/kirtland/400x250/kirtland-temple-lds-270120-wallpaper.jpg"
+    },
+    {
+        templeName: "Nauvoo Illinois",
+        location: "Nauvoo, Illinois, United States",
+        dedicated: "2002, June, 27",
+        area: 54000,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/nauvoo-illinois/400x250/nauvoo-illinois-temple-lds-267751-wallpaper.jpg"
+    },
+    {
+        templeName: "Hong Kong China",
+        location: "Hong Kong, China",
+        dedicated: "1996, May, 26",
+        area: 21800,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/hong-kong-china/400x250/hong-kong-china-temple-lds-268176-wallpaper.jpg"
+    },
+    {
+        templeName: "San Diego California",
+        location: "San Diego, California, United States",
+        dedicated: "1993, April, 30",
+        area: 72600,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/san-diego-california/400x250/san-diego-california-temple-lds-267538-wallpaper.jpg"
+    },
+    {
+        templeName: "Accra Ghana",
+        location: "Accra, Ghana",
+        dedicated: "2004, January, 11",
+        area: 17500,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/accra-ghana/400x250/accra-ghana-temple-lds-273124-wallpaper.jpg"
+    },
+    {
+        templeName: "Rome Italy",
+        location: "Rome, Italy",
+        dedicated: "2019, March, 10",
+        area: 40000,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/rome-italy/400x250/rome-italy-temple-lds-282755-wallpaper.jpg"
+    },
+    {
+        templeName: "Kyiv Ukraine",
+        location: "Kyiv, Ukraine",
+        dedicated: "2010, August, 29",
+        area: 23000,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/kyiv-ukraine/400x250/kyiv-ukraine-temple-lds-277829-wallpaper.jpg"
+    },
+    {
+        templeName: "Paris France",
+        location: "Le Chesnay, France",
+        dedicated: "2017, May, 21",
+        area: 44000,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/paris-france/400x250/paris-france-temple-lds-283235-wallpaper.jpg"
+    },
+    {
+        templeName: "Tokyo Japan",
+        location: "Tokyo, Japan",
+        dedicated: "1980, October, 27",
+        area: 52500,
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/tokyo-japan/400x250/tokyo-japan-temple-lds-274792-wallpaper.jpg"
+    }
+    // can be added more objects as desired
 ];
-
+// Event listener for when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const templeContainer = document.getElementById('temple-container');
-    const year = document.getElementById('year');
-    const lastModified = document.getElementById('last-modified');
-    
-    // Set the current year for the copyright notice
-    year.textContent = new Date().getFullYear();
-    // Set the last modified date for the document
-    lastModified.textContent = document.lastModified;
-
-    // Function to create a temple card HTML structure based on temple object data
-    function createTempleCard(temple) {
+    // Call function to display temples
+    displayTemples(temples);
+    // Set current year in the 'year' element
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Set last modified date of the document
+    document.getElementById('lastModified').textContent = document.lastModified;
+});
+// Function to display temples
+function displayTemples(temples) {
+    // Get container element
+    const container = document.getElementById('templeContainer');
+    // Clear container  
+    container.innerHTML = '';
+    // Loop through each temple object
+    temples.forEach(temple => {
+        // Create a new div element for each temple
         const card = document.createElement('div');
-        card.className = 'temple-card';
-        
+        // Set class name for the card div
+        card.className = 'card';
         card.innerHTML = `
             <h2>${temple.templeName}</h2>
             <p><strong>Location:</strong> ${temple.location}</p>
             <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-            <p><strong>Area:</strong> ${temple.area} sq ft</p>
+            <p><strong>Size:</strong> ${temple.area} sq ft</p>
             <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
         `;
-        
-        templeContainer.appendChild(card);
-    }
-
-    // Function to display temples based on a filtering function
-    function displayTemples(filterFn) {
-        templeContainer.innerHTML = ''; // Clear previous content
-        const filteredTemples = filterFn ? temples.filter(filterFn) : temples; // Apply filter if provided
-        filteredTemples.forEach(createTempleCard); // Create temple cards for filtered temples
-    }
-
-    // Object containing filter functions for different menu options
-    const filters = {
-        home: null, // Display all temples
-        old: temple => new Date(temple.dedicated).getFullYear() < 1900, // Filter temples dedicated before 1900
-        new: temple => new Date(temple.dedicated).getFullYear() > 2000, // Filter temples dedicated after 2000
-        large: temple => temple.area > 90000, // Filter temples with area greater than 90000 sq ft
-        small: temple => temple.area < 10000, // Filter temples with area less than 10000 sq ft
-    };
-
-    // Event listeners for navigation links to apply filters
-    document.querySelectorAll('nav ul li a').forEach(link => {
-        link.addEventListener('click', event => {
-            event.preventDefault();
-            const filterKey = event.target.id;
-            displayTemples(filters[filterKey]); // Display temples based on selected filter
-        });
+        // Append the card to the container
+        container.appendChild(card);
     });
-
-    displayTemples(); // Initially display all temples
-});
+}
+// Function to filter temples based on criteria
+function filterTemples(criteria) {
+    // Start with all temples
+    let filteredTemples = temples;
+    // Filter for old temples
+    if (criteria === 'old') {
+        filteredTemples = temples.filter(temple => new Date(temple.dedicated).getFullYear() < 1900);
+        // Filter for new temples
+    } else if (criteria === 'new') {
+        filteredTemples = temples.filter(temple => new Date(temple.dedicated).getFullYear() > 2000);
+        // Filter for large temples
+    } else if (criteria === 'large') {
+        filteredTemples = temples.filter(temple => temple.area > 90000);
+        // Filter for small temples
+    } else if (criteria === 'small') {
+        filteredTemples = temples.filter(temple => temple.area < 10000);
+    }
+    // Display the filtered temples
+    displayTemples(filteredTemples);
+}
