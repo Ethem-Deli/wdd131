@@ -35,17 +35,16 @@ nav ul li {
     margin: 0 10px;
 }
 
-/* Button styling in navigation */
-nav ul li button {
-    background: none;
-    border: none;
+/* Anchor tag styling in navigation */
+nav ul li a {
+    text-decoration: none;
     color: white;
     padding: 15px;
     cursor: pointer;
 }
 
-/* Hover effect for buttons */
-nav ul li button:hover {
+/* Hover effect for anchor tags */
+nav ul li a:hover {
     background-color: #444;
 }
 
