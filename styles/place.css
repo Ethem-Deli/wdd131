@@ -112,6 +112,16 @@ footer {
     font-size: 20px; /* Example font size */
 }
 
+footer::before {
+    content: '🎗️'; /* Pseudo-element for emoticon before */
+    margin-right: 5px;
+}
+
+footer::after {
+    content: '🥇'; /* Pseudo-element for emoticon after */
+    margin-left: 5px;
+}
+
 @media (min-width: 601px) {
     .data, .weather {
         width: calc(30% + 2vw); /* Adjust width for larger screens */
