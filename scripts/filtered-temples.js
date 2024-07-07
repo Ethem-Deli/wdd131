@@ -121,6 +121,7 @@ const temples = [
     }
     // can be added more objects as desired
 ];
+
 // Event listener for when the DOM content is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Call function to display temples
