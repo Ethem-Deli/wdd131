@@ -50,8 +50,6 @@ const temples = [
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
 
-
-
     {
         templeName: "Salt Lake",
         location: "Salt Lake City, Utah, United States",
@@ -60,11 +58,11 @@ const temples = [
         imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/salt-lake-city-utah/400x250/salt-lake-temple-37762.jpg"
     },
     {
-        templeName: "Kirtland",
-        location: "Kirtland, Ohio, United States",
-        dedicated: "1836, March, 27",
+        templeName: "Bountiful",
+        location: "Bountiful, Utah, United States",
+        dedicated: "1995, January, 8",
         area: 5000,
-        imageUrl: "https://churchofjesuschristtemples.org/kirtland-temple/photographs/#Gallery-16"
+        imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/bountiful-utah/400x250/bountiful-temple-lds-1059079-wallpaper.jpg"
     },
     {
         templeName: "Nauvoo Illinois",
