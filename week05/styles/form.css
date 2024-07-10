@@ -1,0 +1,111 @@
+/* Base styling for the entire body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for the main heading */
+h1 {
+    background-color: #4b0082;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+/* Styling for the form */
+form {
+    background-color: #e6e6fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+    margin: 20px 0;
+}
+
+/* Styling for labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Styling for text input, date input, select, and textarea fields */
+input[type="text"], input[type="date"], select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling for checkbox inputs */
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Hide radio inputs */
+input[type="radio"] {
+    display: none;
+}
+
+/* Styling for star labels */
+label[for^="star"] {
+    /* Default star size */
+    font-size: 20px;
+    /* Default star color */
+    color: rgb(83, 83, 83); 
+    cursor: pointer;
+}
+
+/* Flexbox styling for the rating container */
+#rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Color stars gold when checked */
+#rating input[type="radio"]:checked ~ label,
+#rating input[type="radio"]:checked ~ label ~ label {
+    color: gold;
+}
+
+/* Color stars gold on hover */
+#rating label:hover,
+#rating label:hover ~ label {
+    color: gold;
+}
+
+/* Styling for submit button */
+input[type="submit"] {
+    background-color: #4b0082;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Hover effect for submit button */
+input[type="submit"]:hover {
+    background-color: #3a006e;
+}
+
+/* Styling for footer */
+footer {
+    background-color: #4b0082;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    bottom: 0;
+}
