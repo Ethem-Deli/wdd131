@@ -106,6 +106,10 @@ footer {
     width: 100%;
     text-align: center;
     padding: 5px;
-    position: fixed;
-    bottom: 0;
+    position: relative;
+}
+
+/* Add margin to the bottom of the container to prevent footer overlap */
+.container {
+    margin-bottom: 60px;
 }

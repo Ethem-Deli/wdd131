@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Set the footer's last modification date
     const footer = document.querySelector('footer p:nth-child(2)');
     const now = new Date();
-    footer.textContent = `Last Modification: ${formatDate(now)}`;
+    footer.innerHTML = `Modification: ${formatDate(now)}`;
 
     // Set the current year in the footer
     const yearSpan = document.getElementById('year');
