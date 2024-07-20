@@ -1,30 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Set the current year in the footer
-    document.getElementById('year').textContent = new Date().getFullYear();
+// scripts.js
 
-    // Set the last modified date in the footer
-    document.getElementById('lastModified').textContent = document.lastModified;
+// Update the year dynamically
+document.getElementById("year").textContent = new Date().getFullYear();
 
-    const contactForm = document.getElementById('contactForm');
+// Update the last modified date dynamically
+document.getElementById("lastModified").textContent = document.lastModified;
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+// Implement FAQ toggle functionality
+const faqItems = document.querySelectorAll(".faq-item h3");
 
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+faqItems.forEach(item => {
+    item.addEventListener("click", () => {
+        const faqContent = item.nextElementSibling;
+        faqContent.style.display = faqContent.style.display === "none" ? "block" : "none";
+    });
+});
 
-            if (name && email && message) {
-                console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
-
-                localStorage.setItem('contactForm', JSON.stringify({ name, email, message }));
-
-                alert('Thank you for your message!');
-                contactForm.reset();
-            } else {
-                alert('Please fill out all fields.');
-            }
-        });
-    }
+// Live Chat button functionality
+document.getElementById("liveChatButton").addEventListener("click", () => {
+    alert("Live chat is currently not available. Please check back during our working hours.");
 });
