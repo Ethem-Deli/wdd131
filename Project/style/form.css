@@ -45,7 +45,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #575757;
+    background-color: black;
     border-radius: 5px;
 }
 
@@ -90,7 +90,7 @@ input[type="radio"] {
 /* Styling for star labels */
 label[for^="star"] {
     font-size: 20px;
-    color: rgb(83, 83, 83); 
+    color: rgb(0, 0, 0); 
     cursor: pointer;
 }
 
@@ -137,6 +137,17 @@ footer {
     text-align: center;
     padding: 5px;
     position: relative;
+}
+.live-chat-button {
+    background-color: #0011ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: fixed; /* Change from absolute to fixed */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure the button stays above other content */
 }
 
 /* Add margin to the bottom of the container to prevent footer overlap */

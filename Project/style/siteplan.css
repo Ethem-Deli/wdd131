@@ -6,6 +6,7 @@ body {
     background-color: #f4f4f4;
 }
 
+
 header {
     background-color: #2024ff;
     color: white;
@@ -227,30 +228,38 @@ nav ul li a {
 }
 
 .social-links a {
-    color: white;
+    color: blue;
     text-decoration: none;
     margin-right: 10px;
 }
 
 footer {
-    background-color: #2024ff;
-    color: white;
+    background-color: rgb(255, 254, 197);
+    color: blue;
     text-align: center;
     padding: 20px;
     position: relative;
 }
 
+
 .live-chat-button {
-    background-color: #555;
+    background-color: #0011ff;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    position: absolute;
+    position: fixed; /* Change from absolute to fixed */
     bottom: 20px;
     right: 20px;
+    z-index: 1000; /* Ensure the button stays above other content */
+    border-radius: 5px; /* Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for better visibility */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
 }
-
+.live-chat-button:hover {
+    background-color: #0033cc; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
 /* Responsive styles */
 @media (max-width: 768px) {
     .top-right {

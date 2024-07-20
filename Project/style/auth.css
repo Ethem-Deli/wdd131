@@ -11,8 +11,8 @@ body {
 }
 
 header {
-    background-color: #1E90FF;
-    color: #fff;
+    background-color: #0011ff;
+    color: #ffffff;
     padding: 10px 0;
     text-align: center;
     width: 100%;
@@ -31,8 +31,30 @@ nav ul li {
     margin: 0 15px;
 }
 
+.live-chat-button {
+    background-color: #0011ff;
+    color: white;
+    border: black;
+    display: inline;
+    padding: 5px 0px;
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    position: relative; /* Change from absolute to fixed */
+    top: 100px;
+    right: 20px;
+    z-index: 1000; /* Ensure the button stays above other content */
+    border-radius: 5px; /* Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow for better visibility */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+}
+.live-chat-button:hover {
+    background-color: #0033cc; /* Darker shade for hover effect */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
 nav ul li a {
-    color: #fff;
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
@@ -71,7 +93,7 @@ input {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #1E90FF;
+    background-color: #0011ff;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -88,7 +110,7 @@ p {
 }
 
 a {
-    color: #1E90FF;
+    color: #0011ff;
     text-decoration: none;
 }
 
@@ -103,7 +125,7 @@ a:hover {
 }
 
 footer {
-    background-color: #1E90FF;
+    background-color: #0011ff;
     color: #fff;
     padding: 10px 0;
     text-align: center;
